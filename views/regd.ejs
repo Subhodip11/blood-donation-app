@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/Regd.css">
+    <title>Registration</title>
+    <link rel="icon" href="images/blood-drop.png">
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/fav.jpg">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: linear-gradient(135deg, #ff566dd8, #f5d4d8);
+    }
+    
+    .container {
+        max-width: 550px;
+        width: 100%;
+        max-height: 800px;
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+        padding: 25px 30px;
+    }
+    
+    .container .title {
+        font-size: 30px;
+        font-weight: 900;
+        position: relative;
+    }
+    
+    .container .title::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 10em;
+        /* background: #ff566dd8; */
+        background: linear-gradient(135deg, #ff566dd8, #f5d4d8);
+    }
+    
+    .container form .details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 10px;
+        margin: 20px 0 12px 0;
+    }
+    
+    form .details .input-det {
+        margin-bottom: 15px;
+        width: calc(100% / 2 - 20px);
+    }
+    
+    .details .input-det .det {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .blood-group,
+    .gender {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .details .input-det input {
+        height: 45px;
+        width: 100%;
+        padding-left: 15px;
+        outline: none;
+        ;
+        border-radius: 2px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+    
+    form .blood-group .grp-title {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .blood-group .groups {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .blood-group .groups label {
+        display: flex;
+        align-items: center;
+    }
+    
+    .required {
+        color: red;
+        font-size: small;
+    }
+    
+    form .button {
+        height: 45px;
+        margin-top: 45px;
+        margin-bottom: 15Spx;
+    }
+    
+    form .button input {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 30px;
+        background: blueviolet;
+    }
+    
+    form .button input:hover {
+        background: linear-gradient(135deg, #f5d4d8, #ff566dd8);
+        transition: 0.3s;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="title">Doner Registration</div>
+        <form action="/index/donerDB" method="POST">
+            <div class="details">
+                <div class="input-det">
+                    <span class="det">First Name : <span class="required"> <sup>*</sup> </span> </span>
+                    <input type="text" name="fname" placeholder="Enter your first name" required>
+                </div>
+                <div class="input-det">
+                    <span class="det">Last Name : <span class="required"> <sup>*</sup> </span> </span>
+                    <input type="text" name="lname" placeholder="Enter your last name" required>
+                </div>
+                <div class="input-det">
+                    <span class="det">Email : <span class="required"> <sup>*</sup> </span> </span>
+                    <input type="email" name="email" placeholder="Enter your Email Address" required>
+                </div>
+                <div class="input-det">
+                    <span class="det">Phone No. : <span class="required"> <sup>*</sup> </span> </span>
+                    <input type="number" name="contact" placeholder="Enter a valid phone No." required>
+                </div>
+                <div class="input-det">
+                    <span class="det">Address : </span>
+                    <!-- <input type="text" placeholder="Enter the Address" required> -->
+                    <textarea cols="50" rows="4" placeholder="Enter Your Address(Optional)" name="address"></textarea>
+                </div>
+            </div>
+            <div class="blood-group">
+                <label for="Blood-Groups">Select your Blood Group  :  <span class="required"> <sup>*</sup> </span>  </label>
+                <select class="Blood-Groups" name="blood_group">
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+            </div>
+            <br>
+            <div class="gender">
+                <label for="Blood-Groups">Select your Gender  :  <span class="required"> <sup>*</sup> </span>  </label>
+                <select class="gen" name="gender">
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="O">Other</option>
+                </select>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

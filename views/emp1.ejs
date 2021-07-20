@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Doner Details</title>
+    <link rel="icon" href="images/blood-drop.png">
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/fav.jpg">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    table {
+        padding: 1rem;
+    }
+    
+    table th,
+    td {
+        padding: 0.5rem 5rem;
+        margin: 0.5rem;
+    }
+    
+    .btn {
+        padding: 0.2rem 0.5rem;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 0.2rem;
+    }
+    
+    .btn:nth-child(1) {
+        background-color: rgb(68, 68, 226);
+        color: white;
+    }
+    
+    .btn:nth-child(2) {
+        background-color: rgb(245, 245, 40);
+        color: blue;
+    }
+    
+    thead th {
+        background-color: rgb(203, 250, 133);
+        color: rgb(49, 48, 48);
+        margin: 1rem;
+        border-spacing: 10%;
+    }
+    
+    tr:nth-child(2n) {
+        background-color: rgb(235, 102, 102);
+        color: black;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+    
+    tr:nth-child(2n+1) {
+        background-color: whitesmoke;
+    }
+</style>
+
+<body>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index">BLOOD DONATION MAIN PAGE</a>
+            <a class="navbar-brand" href='/index/donerDB'>CREATE NEW ACCOUNT</a>
+            <a class="navbar-brand" href='/index/searchDB'>SEARCH DONER</a>
+        </div>
+    </nav>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <th colspan="6" style="text-align: center; background-color: chartreuse;">DONER DETAILS</th>
+
+                <thead>
+
+                    <th>Name</th>
+                    <th>Blood Group</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+
+                </thead>
+            </thead>
+            <tbody>
+                <% doner.forEach(ele=>{ %>
+                    <tr>
+                        <td>
+                            <%= ele['fname'] %>
+                                <%= ele['lname'] %>
+                        </td>
+                        <td>
+                            <%= ele['blood_group'] %>
+                        </td>
+                        <td>
+                            <%= ele['gender'] %>
+                        </td>
+                        <td>
+                            <%= ele['email'] %>
+                        </td>
+                        <td>
+                            <%= ele['contact'] %>
+                        </td>
+                        <td>
+                            <address>
+                                <%= ele['address'] %>
+                            </address>
+                        </td>
+
+                    </tr>
+                    <%  }) %>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

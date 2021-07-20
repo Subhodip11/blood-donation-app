@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 30rem;
+        width: 40rem;
+        border-radius: 0.5rem;
+        background-image: linear-gradient(140deg, deeppink, pink, white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(to bottom right, red, yellow, yellow, pink);
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: -1;
+    }
+    
+    #a_user,
+    #a_pass {
+        height: 3rem;
+        width: 26rem;
+        border-radius: 0.5rem;
+        outline: none;
+        border: none;
+        padding: 0.2rem;
+        font-size: 1.3rem;
+    }
+    
+    #user,
+    #pass {
+        margin: 3rem auto;
+    }
+    
+    .btn {
+        outline: none;
+        border: none;
+        padding: 0.4rem;
+        font-size: 1.5rem;
+        border-radius: 0.3rem;
+        margin-left: 8rem;
+        width: 12rem;
+        background-color: rgb(247, 72, 72);
+        color: white;
+    }
+    
+    .hr-line {
+        width: 80%;
+        height: 0.13rem;
+        background-color: rgb(61, 60, 60);
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div class="card">
+            <h1 style="text-align: center; position: absolute; top: 10%; color: whitesmoke;">Admin Login</h1>
+            <div class="hr-line">
+
+            </div>
+            <form action="#">
+                <div id="user">
+                    <input id="a_user" type="text" placeholder="Admin Username">
+                </div>
+                <div id="pass">
+                    <input id="a_pass" type="text" placeholder="Admin Password">
+                </div>
+                <input type="submit" value="Login" class="btn">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

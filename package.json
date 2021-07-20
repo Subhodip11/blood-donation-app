@@ -1,0 +1,26 @@
+{
+    "name": "blood-doner",
+    "version": "1.0.0",
+    "main": "blood-doner-app.js",
+    "scripts": {
+        "start": "node blood-doner-app.js"
+    },
+    "author": "Subhodip Chatterjee",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "connect-flash": "^0.1.1",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "firebase-tools": "^9.10.2",
+        "fs": "0.0.1-security",
+        "method-override": "^3.0.0",
+        "mongoose": "^5.12.7",
+        "path": "^0.12.7",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {},
+    "description": ""
+}
